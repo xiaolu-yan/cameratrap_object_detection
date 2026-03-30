@@ -1,0 +1,1 @@
+To run the scripts in this folder, first move the script to the parent project folder.
