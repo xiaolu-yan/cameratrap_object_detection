@@ -1,8 +1,8 @@
-# Geese Camera Trap Object Detection
+# Geese Camera Trap Object Detection (OD)
 
 ---
 
-This repo contains some YOLO models and weights for the camera trap data only.
+This repo contains some yolo OD models and weights for the camera trap data only.
 
 ## Training
 
@@ -31,6 +31,28 @@ names:
 ```
 
 Then you can delete `./First training` and `./Second training` and start training/testing.
+
+## Testing
+
+For testing the yolo OD model, now only the yolo26m weight is saved in this repo.
+
+To run plain yolo26m for testing, run
+
+```python
+python test_yolo26m_baseline.py eval
+```
+
+To run yolo26m for testing with top 25% area excluded, run
+
+```python
+python test_yolo26m_baseline_region.py
+```
+
+To run yolo26m for testing with smallest 20% samples excluded, run
+
+```python
+python test_yolo26m_size_filter.py
+```
 
 ## References
 

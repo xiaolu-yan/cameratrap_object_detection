@@ -1,0 +1,11 @@
+path: ./cameratrap_data
+train: images/train
+val:   images/val
+test:  images/test
+
+nc: 4
+names:
+  0: Brent_Up
+  1: Brent_Down
+  2: Barnacle_Up
+  3: Barnacle_Down

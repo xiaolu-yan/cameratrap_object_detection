@@ -40,7 +40,7 @@ DEFAULT_WEIGHTS = BASE_DIR / "runs" / "train" / "yolo26m_baseline" / "weights" /
 
 # ─── Config ───────────────────────────────────────────────────────────────────
 IMG_SIZE    = 1280
-CONF_THRES  = 0.25
+CONF_THRES  = 0.15
 IOU_THRES   = 0.45
 DEVICE      = 0
 CLASS_NAMES = ["Brent_Up", "Brent_Down", "Barnacle_Up", "Barnacle_Down"]

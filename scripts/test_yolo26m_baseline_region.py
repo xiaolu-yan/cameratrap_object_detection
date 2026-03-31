@@ -1,16 +1,16 @@
 """
-YOLOv8n Region-Filtered Evaluation — Baseline
+YOLO26m Region-Filtered Evaluation — Baseline
 Evaluates only boxes whose center falls below a configurable top-crop threshold.
 
 Usage:
-  python test_yolov8n_baseline_region.py
-  python test_yolov8n_baseline_region.py --top-crop 0.2
-  python test_yolov8n_baseline_region.py --weights path/to/best.pt
+  python test_yolo26m_baseline_region.py
+  python test_yolo26m_baseline_region.py --top-crop 0.2
+  python test_yolo26m_baseline_region.py --weights path/to/best.pt
 
 --top-crop  : fraction of image height to ignore from the top (default 0.15)
               e.g. 0.15 means only evaluate boxes with y_center >= 0.15 * img_height
 
-Outputs (all saved to --save-dir or runs/test/yolov8n_baseline_region/):
+Outputs (all saved to --save-dir or runs/test/yolo26m_baseline_region/):
   results.json              — metrics summary
   confusion_matrix.png      — raw counts heatmap
   confusion_matrix_norm.png — row-normalised heatmap
@@ -38,7 +38,7 @@ from ultralytics import YOLO
 # ─── Paths ────────────────────────────────────────────────────────────────────
 BASE_DIR        = Path(__file__).parent
 SPLIT_DIR       = BASE_DIR / "cameratrap_data"
-DEFAULT_WEIGHTS = BASE_DIR / "runs" / "train" / "yolov8n_baseline" / "weights" / "best.pt"
+DEFAULT_WEIGHTS = BASE_DIR / "runs" / "train" / "yolo26m_baseline" / "weights" / "best.pt"
 
 # ─── Config ───────────────────────────────────────────────────────────────────
 IMG_SIZE    = 1280
@@ -442,12 +442,12 @@ def evaluate(weights: Path, top_crop: float, save_dir: Path):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="YOLOv8n Region-Filtered Evaluation")
+    parser = argparse.ArgumentParser(description="YOLO26m Region-Filtered Evaluation")
     parser.add_argument("--weights",  type=Path,  default=DEFAULT_WEIGHTS)
     parser.add_argument("--top-crop", type=float, default=0.20,
                         help="Fraction of image height to ignore from top (default 0.15)")
     parser.add_argument("--save-dir", type=Path,
-                        default=BASE_DIR / "runs" / "test" / "yolov8n_baseline_region")
+                        default=BASE_DIR / "runs" / "test" / "yolo26m_baseline_region")
     args = parser.parse_args()
 
     evaluate(args.weights, args.top_crop, args.save_dir)
