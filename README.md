@@ -30,7 +30,13 @@ names:
   3: Barnacle_Down
 ```
 
-Then you can delete `./First training` and `./Second training` and start training/testing.
+Then you can delete `./First training` and `./Second training` and start training/testing with.
+
+```python
+python train_yolo26m_baseline.py
+```
+
+
 
 ## Testing
 
